@@ -67,7 +67,10 @@ function startGame(){
             snakeY-=box;
         break;
     }
-    snake.pop();
+    snakeX != food.x || snakeY != food.y ? snake.pop() : food = {
+        x:Math.floor(Math.random() * 15 + 1)*box,
+        y:Math.floor(Math.random() * 15 + 1)*box
+    };  
     let newHead = {
         x:snakeX,
         y:snakeY
